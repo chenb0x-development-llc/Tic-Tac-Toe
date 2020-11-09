@@ -2,11 +2,7 @@
 
 """
 To Do:
-1. Design the game board - DONE
-2. Giving the user the choice betwen "X" and "O" - DONE
-3. Design the game to be two-players - DONE
 4. Give the option to play again
-5. Determine win, loss, and tie
 6. Develop an AI... BONUS points!!!
 """
 
