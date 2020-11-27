@@ -2,7 +2,7 @@
 
 """
 To Do:
-4. Give the option to play again
+4. Give the option to play again - DONE
 6. Develop an AI... BONUS points!!!
 """
 
@@ -15,18 +15,22 @@ def printBoard(board):
     print('-+-+-')
     print(f"{board['1']}|{board['2']}|{board['3']}")
 
-count = 0
+
 play = 'y'
 
 while play == "y":
+    count = 0
     gameBoard = {'7': ' ', '8': ' ', '9': ' ',
                  '4': ' ', '5': ' ', '6': ' ',
                  '1': ' ', '2': ' ', '3': ' '}
     turn = 'X'
-    for i in range(10):
+    while count <= 9:
         printBoard(gameBoard)
-        move = input(f"It's your turn, {turn}. Move to which place?")
-        print(move)
+        if turn == 'X':
+            move = input(f"It's your turn, {turn}. Move to which place?")
+            print(move)
+        else:
+            move = str(random.randint(1,9))
 
         try:
             if gameBoard[move] == ' ':
