@@ -24,9 +24,9 @@ while play == "y":
                  '4': ' ', '5': ' ', '6': ' ',
                  '1': ' ', '2': ' ', '3': ' '}
     turn = 'X'
-    while count <= 9:
+    while count <= 9:  # Change from a for loop to work with a count that changes on condition of proper space selection.
         printBoard(gameBoard)
-        if turn == 'X':
+        if turn == 'X': # This conditional allowed for play against computer, but removed PvP capability. Needs to be fixed
             move = input(f"It's your turn, {turn}. Move to which place?")
             print(move)
         else:
