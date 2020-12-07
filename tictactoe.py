@@ -84,6 +84,6 @@ while play == "y":
             turn = 'X'
 
     printBoard(gameBoard)
-    play = input("Would you like to play again? (Y)es/(N)o")
+    play = input("Would you like to play again? (Y)es/(N)o: ")
     play = play.lower()
   
