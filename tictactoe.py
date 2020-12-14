@@ -2,8 +2,10 @@
 
 """
 To Do:
-4. Give the option to play again - DONE
 6. Develop an AI... BONUS points!!!
+    6a. Fix infinite loop on tie game
+    6b. Bring PvP back in to the game
+    6c. Separate the game board during AI play
 """
 
 import random
@@ -14,11 +16,13 @@ def printBoard(board):
     print(f"{board['4']}|{board['5']}|{board['6']}")
     print('-+-+-')
     print(f"{board['1']}|{board['2']}|{board['3']}")
+    print("\n")
 
 
 play = 'y'
 
 while play == "y":
+    players = int(input("Enter the number of players (1) or (2): "))
     count = 0
     gameBoard = {'7': ' ', '8': ' ', '9': ' ',
                  '4': ' ', '5': ' ', '6': ' ',
@@ -27,6 +31,9 @@ while play == "y":
     while count <= 9:  # Change from a for loop to work with a count that changes on condition of proper space selection.
         printBoard(gameBoard)
         if turn == 'X': # This conditional allowed for play against computer, but removed PvP capability. Needs to be fixed
+            move = input(f"It's your turn, {turn}. Move to which place?")
+            print(move)
+        elif turn == 'O' and players != 1:
             move = input(f"It's your turn, {turn}. Move to which place?")
             print(move)
         else:
@@ -76,7 +83,7 @@ while play == "y":
                 print("\nGame Over\n")
                 print(f"****** {turn} won! ******")
                 break
-        
+         
 
         if turn == 'X':
             turn = 'O'
